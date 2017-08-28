@@ -1,0 +1,245 @@
+\documentclass[10pt]{article}
+
+\usepackage{pictex, latexsym, graphicx,amsmath,amssymb,amsbsy,amsfonts,amsthm,verbatim}
+\usepackage{graphics}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{algorithm,algorithmic}
+\usepackage{multirow}
+
+\setlength{\headheight}{12pt}
+\setlength{\voffset}{-0.25in}
+\setlength{\headsep}{0.25in}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+% Counter for the problems.
+\newcounter{problem}
+\newcommand{\problem}{\textbf{\refstepcounter{problem}Problem \theproblem.} }
+
+% Macros
+\def\vu{\mathbf{u}}
+\def\vx{\mathbf{x}}
+\def\vb{\mathbf{b}}
+\def\vv{\mathbf{v}}
+\def\vw{\mathbf{w}}
+
+\renewcommand{\implies}{\rightarrow}
+\renewcommand{\lor}{\vee}
+\renewcommand{\land}{\wedge}
+\newcommand{\xor}{\oplus}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\TRUE}{\mathbf{T}}
+\newcommand{\FALSE}{\mathbf{F}}
+\newcommand{\universe}{\mathcal{U}}
+
+\begin{document}
+\pagestyle{fancyplain}
+
+\chead{DISCRETE STRUCTURE (CO1007) --- SOLUTION to Homework 01 --- PROPOSITIONAL LOGIC}
+%\chead{DISCRETE STRUCTURE (CO1007) --- Homework 01 --- PROPOSITIONAL LOGIC}
+\textit{\textbf{\underline{Instruction:}} Type your answers to the following questions provided by LaTeX and submit a zipped file (included .pdf and .tex files) to E-learning by group (only 4-5 members in each group). Only team leader will submit it. One page per problem. Please use the solution template provided.}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+% ***************GROUP INFO*******************
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline 
+        \multicolumn{4}{|c|}{\textbf{GROUP ... ---- MEMBER LIST}} \\ 
+        \hline 
+        \textbf{No.} &\qquad\qquad \textbf{Name}\qquad\qquad\qquad & \qquad\textbf{ID}\qquad\qquad & \qquad\textbf{Role}\qquad\qquad \\ 
+        \hline 
+        1 &  &  &  \\ 
+        \hline 
+        2 &  &  &  \\ 
+        \hline 
+        3 &  &  &  \\ 
+        \hline 
+        4 &  &  &  \\ 
+        \hline 
+        5 &  &  &  \\ 
+        \hline 
+    \end{tabular} 
+\end{center}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ***************PROBLEM 1*******************
+\clearpage
+\problem [10pts] Let $p$ and $q$ be the propositions\\
+%\begin{tabular}[h]{c@{ : }l}
+%   $p$ & I bought a lottery ticket this week.\\
+%   $q$ & I won the million dollar jackpot.
+%\end{tabular}\\
+Let $p$ and $q$ be the propositions "The election is decided" and "The
+votes have been counted," respectively. Express each of these compound
+propositions as English sentences.
+\bigbreak
+
+\textit{Solution:}
+
+\begin{enumerate}
+%1
+\item $\lnot p$: The election is not decided.
+
+%2
+\item $p \lor q$: The election is decided, or the votes have been counted.
+
+%3
+\item $\lnot p \land q$: The election is not decided, and the votes have been counted.
+
+%4
+\item $q \implies p$: If the votes have been counted, the election is decided.
+
+%5
+\item $\lnot q \implies \lnot p$: If the votes have not been counted, the election is not decided.
+
+%6
+\item $\lnot p \implies \lnot q$: If the election is not decided, the votes have not been counted.
+
+%7
+\item $ p \iff q$: The election is decided if and only if the votes have been counted.
+
+%8
+\item $ \lnot q \lor (\lnot p \land q))$: The votes have not been counted, or the election is not decided.
+
+\end{enumerate}
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 2*******************
+\clearpage
+\problem [10pts] Construct a truth table for the compound propositions $((p\implies q) \implies r))\implies s)$.\\
+\bigbreak
+\textit{Solution:}
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline 
+        \textbf{$p$} & \textbf{$q$} & \textbf{$r$}  & \textbf{$s$}  & \textbf{$p \implies q$} & \textbf{$(p \implies q) \implies r$} & 
+        \textbf{$[(p \implies q) \implies r ] \implies s$}\\ 
+        \hline 
+        T & T & T & T & T & T & T \\ 
+        \hline 
+        T & T & T & F & T & T & F \\ 
+        \hline 
+        T & T & F & T & T & F & T \\ 
+        \hline 
+        T & T & F & F & T & F & T \\ 
+        \hline 
+        T & F & T & T & F & T & T \\ 
+        \hline 
+        T & F & T & F & F & T & F \\ 
+        \hline 
+        T & F & F & T & F & T & T \\ 
+        \hline 
+        T & F & F & F & F & T & F \\ 
+        \hline 
+        F & T & T & T & T & T & T \\ 
+        \hline 
+        F & T & T & F & T & T & F \\ 
+        \hline 
+        F & T & F & T & T & F & T \\ 
+        \hline 
+        F & T & F & F & T & F & T \\ 
+        \hline 
+        F & F & T & T & T & T & T \\ 
+        \hline 
+        F & F & T & F & T & T & F \\ 
+        \hline 
+        F & F & F & T & T & F & T \\ 
+        \hline 
+        F & F & F & F & T & F & T \\
+        \hline
+
+    \end{tabular} 
+\end{center}
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 3*******************
+\clearpage
+\problem [5pts] Show that the statement $(p \lor q) \land [\lnot p \land \lnot q]$ is a contradiction.\\
+\bigbreak
+\textit{Solution:} ...
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 4*******************
+\clearpage
+\problem [10pts] On the island of Flopi, there are three types of people: Knights, Knaves, and Floppers. All inhabitants know which type the others are, but they are otherwise indistinguishable. Knights always tell the truth. Knaves always lie. Floppers always choose to lie or tell the truth by doing the opposite of the previous speaker (i.e. if someone just spoke a lie, the flopper will tell the truth; if someone just spoke a truth, the flopper will lie). While on your vacation, you come across three inhabitants, $A$, $B$, and $C$. They say the following, in order:
+\begin{quote}
+    $A$ says, ``We are all knights.''\\
+    $B$ says, ``$C$ is a knight.''\\
+    $C$ says, ``$A$ is a knave.''\\
+    $A$ says, ``$C$ lied.''
+\end{quote}
+Determine all possibilities of $A$, $B$, and $C$ being Knights, Knaves, or Floppers (not all need to be distinct).\\
+\bigbreak
+\textit{Solution:} ...
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 5*******************
+\clearpage
+\problem [10pts] Five friends have access to a chat room. Is it possible to determine who is chatting if the following information is known? Either Kevin
+or Heather, or both, are chatting. Either Randy or Vijay, but not both, are chatting. If Abby is chatting, so is Randy. Vijay and Kevin are either both chatting or neither is. If Heather is chatting, then so are Abby and Kevin.\\
+\bigbreak
+\textit{Solution:} ...
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 6*******************
+\clearpage
+\problem [10pts] Show that $(p\implies q) \implies [(q\implies r)\implies(p \implies r)]$ is a tautology (using a truth table).
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 7*******************
+\clearpage
+\problem [10pts] Prove\footnote{"Prove" means do not use truth tables!} that $(p \implies q) \land (p \implies r)$ and $p \implies (q \land r)$ are logically equivalent.\\
+\textit{Solution:} ...
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 8*******************
+\clearpage
+\problem [15pts] Prove\footnote{``Prove'' means do not use truth tables!} that $\neg [[[[(p\land q) \land r]\lor[(p\land r)\land\neg r]]\lor \neg q]\implies s]$ and $[(p\land r)\lor \neg q] \land \neg s$ are logically equivalent. Then check it by using a truth table.\\
+\bigbreak
+\textit{Solution:}
+
+    Suppose \\
+    $ A \equiv $ the left-hand side of the equation.\\
+    $ B \equiv $ the right-hand side of the equation.\\
+    $ \Rightarrow $ We have to prove $ A \equiv B $. \\
+
+    $ A \equiv \neg [ [ [ [ (p \land q) \land r ] \lor [ (p \land r) \land \neg r ] ] \lor \neg q ] \implies s] $ \\
+    $ \equiv \neg [ [ [ [ (p \land r) \land q ] \lor [ (p\land r) \land \neg r ] ]\lor \neg q ] \implies s] $ \\
+    $ \equiv \neg [ [ [ (p \land r) \land (q \lor \neg r) ] \lor \neg q ] \implies s ] $ \\
+    $ \equiv \neg [ [ [ (p \land r) \lor \neg q ] \land [ (q \lor \neg r) \lor \neg q ] ] \implies s ] $ \\
+    $ \equiv \neg [ [ [ (p \land r) \lor \neg q ] \land [ q \lor \neg q \lor \neg r ] ] \implies s ] $ \\
+    $ \equiv \neg [ [ [ (p \land r) \lor \neg q ] \land \TRUE ] \implies s ] $ \\
+    $ \equiv \neg [ [ (p \land r) \lor \neg q ] \implies s ] $ \\
+    $ \equiv [ (p \land r) \lor \neg q ] \land \neg s \equiv B $
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ***************PROBLEM 9*******************
+\clearpage
+\problem[Bonus] Some extra exercises in Sections 1.1, 1.2, 1.3 from Rosen's book, 7th ed.
+\bigbreak
+\textit{Solution:}
+
+\end{document}
