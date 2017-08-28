@@ -39,7 +39,9 @@
 
 \chead{DISCRETE STRUCTURE (CO1007) --- SOLUTION to Homework 01 --- PROPOSITIONAL LOGIC}
 %\chead{DISCRETE STRUCTURE (CO1007) --- Homework 01 --- PROPOSITIONAL LOGIC}
-\textit{\textbf{\underline{Instruction:}} Type your answers to the following questions provided by LaTeX and submit a zipped file (included .pdf and .tex files) to E-learning by group (only 4-5 members in each group). Only team leader will submit it. One page per problem. Please use the solution template provided.}
+\textit{\textbf{\underline{Instruction:}} Type your answers to the following questions provided by LaTeX and submit a zipped file
+(included .pdf and .tex files) to E-learning by group (only 4-5 members in each group).
+Only team leader will submit it. One page per problem. Please use the solution template provided.}
 
 %---------------------------------------------------------------------------------------------------------------------------------------------------
 % ***************GROUP INFO*******************
@@ -165,14 +167,39 @@ propositions as English sentences.
 \clearpage
 \problem [5pts] Show that the statement $(p \lor q) \land [\lnot p \land \lnot q]$ is a contradiction.\\
 \bigbreak
-\textit{Solution:} ...
+\textit{Solution:}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline 
+        \textbf{$p$} & \textbf{$q$} & \textbf{$\neg p$} & \textbf{$\neg q$} &
+        \textbf{$p \lor q$}  & \textbf{$\neg p \land \neg q$} & \textbf{$(p \lor q) \land (\neg p \land \neg q)$}\\
+        \hline
+        T & T & F & F & T & F & F \\
+        \hline
+        T & F & F & T & T & F & F \\
+        \hline
+        F & T & T & F & T & F & F \\
+        \hline
+        F & F & T & T & F & T & F \\
+        \hline
+    \end{tabular}
+    \bigbreak
+    The statement $(p \lor q) \land [\lnot p \land \lnot q]$ is always false $\rightarrow$ It is a contradiction.
+\end{center}
 %---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 % ***************PROBLEM 4*******************
 \clearpage
-\problem [10pts] On the island of Flopi, there are three types of people: Knights, Knaves, and Floppers. All inhabitants know which type the others are, but they are otherwise indistinguishable. Knights always tell the truth. Knaves always lie. Floppers always choose to lie or tell the truth by doing the opposite of the previous speaker (i.e. if someone just spoke a lie, the flopper will tell the truth; if someone just spoke a truth, the flopper will lie). While on your vacation, you come across three inhabitants, $A$, $B$, and $C$. They say the following, in order:
+\problem [10pts] On the island of Flopi, there are three types of people: Knights, Knaves, and Floppers.
+All inhabitants know which type the others are, but they are otherwise indistinguishable.
+Knights always tell the truth. Knaves always lie.
+Floppers always choose to lie or tell the truth by doing the opposite of the previous speaker
+(i.e. if someone just spoke a lie, the flopper will tell the truth; if someone just spoke a truth, the flopper will lie).
+While on your vacation, you come across three inhabitants, $A$, $B$, and $C$.
+They say the following, in order:
 \begin{quote}
     $A$ says, ``We are all knights.''\\
     $B$ says, ``$C$ is a knight.''\\
@@ -188,8 +215,13 @@ Determine all possibilities of $A$, $B$, and $C$ being Knights, Knaves, or Flopp
 
 % ***************PROBLEM 5*******************
 \clearpage
-\problem [10pts] Five friends have access to a chat room. Is it possible to determine who is chatting if the following information is known? Either Kevin
-or Heather, or both, are chatting. Either Randy or Vijay, but not both, are chatting. If Abby is chatting, so is Randy. Vijay and Kevin are either both chatting or neither is. If Heather is chatting, then so are Abby and Kevin.\\
+\problem [10pts] Five friends have access to a chat room.
+Is it possible to determine who is chatting if the following information is known?
+Either Kevin or Heather, or both, are chatting.
+Either Randy or Vijay, but not both, are chatting.
+If Abby is chatting, so is Randy.
+Vijay and Kevin are either both chatting or neither is.
+If Heather is chatting, then so are Abby and Kevin.\\
 \bigbreak
 \textit{Solution:} ...
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -198,7 +230,8 @@ or Heather, or both, are chatting. Either Randy or Vijay, but not both, are chat
 
 % ***************PROBLEM 6*******************
 \clearpage
-\problem [10pts] Show that $(p\implies q) \implies [(q\implies r)\implies(p \implies r)]$ is a tautology (using a truth table).
+\problem [10pts] Show that $(p\implies q) \implies [(q\implies r)\implies(p \implies r)]$
+is a tautology (using a truth table).
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -206,7 +239,8 @@ or Heather, or both, are chatting. Either Randy or Vijay, but not both, are chat
 
 % ***************PROBLEM 7*******************
 \clearpage
-\problem [10pts] Prove\footnote{"Prove" means do not use truth tables!} that $(p \implies q) \land (p \implies r)$ and $p \implies (q \land r)$ are logically equivalent.\\
+\problem [10pts] Prove\footnote{"Prove" means do not use truth tables!} that
+$(p \implies q) \land (p \implies r)$ and $p \implies (q \land r)$ are logically equivalent.\\
 \textit{Solution:} ...
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -214,7 +248,9 @@ or Heather, or both, are chatting. Either Randy or Vijay, but not both, are chat
 
 % ***************PROBLEM 8*******************
 \clearpage
-\problem [15pts] Prove\footnote{``Prove'' means do not use truth tables!} that $\neg [[[[(p\land q) \land r]\lor[(p\land r)\land\neg r]]\lor \neg q]\implies s]$ and $[(p\land r)\lor \neg q] \land \neg s$ are logically equivalent. Then check it by using a truth table.\\
+\problem [15pts] Prove\footnote{``Prove'' means do not use truth tables!} that
+$\neg [[[[(p\land q) \land r]\lor[(p\land r)\land\neg r]]\lor \neg q]\implies s]$ and $[(p\land r)\lor \neg q] \land \neg s$
+are logically equivalent. Then check it by using a truth table.\\
 \bigbreak
 \textit{Solution:}
 
