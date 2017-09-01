@@ -267,6 +267,37 @@ are logically equivalent. Then check it by using a truth table.\\
     $ \equiv \neg [ [ [ (p \land r) \lor \neg q ] \land \TRUE ] \implies s ] $ \\
     $ \equiv \neg [ [ (p \land r) \lor \neg q ] \implies s ] $ \\
     $ \equiv [ (p \land r) \lor \neg q ] \land \neg s \equiv B $
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline 
+			\textbf{$p$} &
+			\textbf{$q$} &
+			\textbf{$r$} &
+			\textbf{$s$} &
+			\textbf{$\neg q$} &
+			\textbf{$\neg r$} &
+			\textbf{$p \land q$} &
+			\textbf{$(p \land q) \land r$} &
+			\textbf{$p \land r$} &
+			\textbf{$(p \land r) \land \neg r$} &
+			\textbf{$[(p \land q) \land r] \lor [(p \land r) \land \neg r]$} &
+			\textbf{$[[(p \land q) \land r] \lor [(p \land r) \land \neg r]] \lor \neg q$} &
+			\textbf{$[[[(p \land q) \land r] \lor [(p \land r) \land \neg r]] \lor \neg q] \implies s$} &
+			\hline
+			
+			T & T & F & F & T & F & F \\
+			\hline
+			T & F & F & T & T & F & F \\
+			\hline
+			F & T & T & F & T & F & F \\
+			\hline
+			F & F & T & T & F & T & F \\
+			\hline
+		\end{tabular}
+		\bigbreak
+		The statement $(p \lor q) \land [\lnot p \land \lnot q]$ is always false $\rightarrow$ It is a contradiction.
+	end{center}
 
 %----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
