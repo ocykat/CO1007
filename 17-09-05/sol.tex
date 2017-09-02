@@ -1,6 +1,3 @@
-% This is a TeX file
-% It is essentially a programming language for mathematics documents
-% You can ignore this first portion of the file, as it is essentially a bunch of "include" statements.
 \documentclass[10pt]{article}
 
 \usepackage{pictex, latexsym, graphicx,amsmath,amssymb,amsbsy,amsfonts,amsthm,verbatim}
@@ -16,11 +13,11 @@
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0em}
 
-% The following denotes a counter for the problems.
+% Counter for the problems.
 \newcounter{problem}
 \newcommand{\problem}{\textbf{\refstepcounter{problem}Problem \theproblem.} }
 
-% These are macro shortcuts! Helpful!
+% Macros
 \def\vu{\mathbf{u}}
 \def\vx{\mathbf{x}}
 \def\vb{\mathbf{b}}
@@ -35,110 +32,266 @@
 \newcommand{\TRUE}{\mathbf{T}}
 \newcommand{\FALSE}{\mathbf{F}}
 \newcommand{\universe}{\mathcal{U}}
+\newcommand\R{\mathbb{R}}
+
+
+% Math commands:
+% \forall, \exists
 
 \begin{document}
 \pagestyle{fancyplain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% NOW you can start typing your text that will appear in the PDF!!!
-
-% Note that anything after a '%' is a comment!
-
-% Anything immediately after a '\' is a command. 
-% Some denote formatting, some are for special characters.
-% The '$' symbol starts and ends "math mode". Use this only for mathematical statements
-% In math mode, any sequence of letters is meant to be a list of variables, so use "\sin x" for the sine of x, which will look much different from "sin x"
-\chead{DISCRETE STRUCTURE (CO1007) --- SOLUTION to Homework 01 --- PROPOSITIONAL LOGIC}
-%\chead{DISCRETE STRUCTURE (CO1007) --- Homework 01 --- PROPOSITIONAL LOGIC}
+\chead{DISCRETE STRUCTURE (CO1007) --- SOLUTION to Homework 02 --- PREDICATE LOGIC \& PROOF}
 \textit{\textbf{\underline{Instruction:}} Type your answers to the following questions provided by LaTeX and submit a zipped file (included .pdf and .tex files) to E-learning by group (only 4-5 members in each group). Only team leader will submit it. One page per problem. Please use the solution template provided.}
 
+% ********** GROUP INFO **********
+
 \begin{center}
-	\begin{tabular}{|c|c|c|c|}
-		\hline 
-		\multicolumn{4}{|c|}{\textbf{GROUP ... ---- MEMBER LIST}} \\ 
-		\hline 
-		\textbf{No.} &\qquad\qquad \textbf{Name}\qquad\qquad\qquad & \qquad\textbf{ID}\qquad\qquad & \qquad\textbf{Role}\qquad\qquad \\ 
-		\hline 
-		1 &  &  &  \\ 
-		\hline 
-		2 &  &  &  \\ 
-		\hline 
-		3 &  &  &  \\ 
-		\hline 
-		4 &  &  &  \\ 
-		\hline 
-		5 &  &  &  \\ 
-		\hline 
-	\end{tabular} 
+    \begin{tabular}{|c|c|c|c|}
+        \hline 
+        \multicolumn{4}{|c|}{\textbf{GROUP ... ---- MEMBER LIST}} \\ 
+        \hline 
+        \textbf{No.} &\qquad\qquad \textbf{Name}\qquad\qquad\qquad & \qquad\textbf{ID}\qquad\qquad & \qquad\textbf{Role}\qquad\qquad \\ 
+        \hline 
+        1 &  &  &  \\ 
+        \hline 
+        2 &  &  &  \\ 
+        \hline 
+        3 &  &  &  \\ 
+        \hline 
+        4 &  &  &  \\ 
+        \hline 
+        5 &  &  &  \\ 
+        \hline 
+    \end{tabular} 
 \end{center}
 
-\problem [10pts] Let $p$ and $q$ be the propositions\\
-%\begin{tabular}[h]{c@{ : }l}
-%	$p$ & I bought a lottery ticket this week.\\
-%	$q$ & I won the million dollar jackpot.
-%\end{tabular}\\
-Let $p$ and $q$ be the propositions "The election is decided" and "The
-votes have been counted," respectively. Express each of these compound
-propositions as English sentences.
+
+
+% ********** PROBLEM 01 **********
+\clearpage
+\problem [10pts] Let $F(x, y)$ be the statement ``$x$ can fool $y$", where the domain consists of all people in the world. Use quantifiers to express each of these statements.
+
+\bigbreak
+\textit{Solution:}
+
 \begin{enumerate}
-\item $\lnot p$
+    %1
+    \item Everybody can fool Fred.
+    
+    %2
+    \item Evelyn can fool everybody.
 
-\item $p \lor q$
+    %3
+    \item Everybody can fool somebody.
 
-\item $\lnot p \land q$ 
+    %4
+    \item There is no one who can fool everybody.
 
+    %5
+    \item No one can fool both Fred and Jerry.
 
-\item $q \implies p$
+    %6
+    \item There is exactly one person whom everybody can fool.
 
-\item $\lnot q \implies \lnot p$
+    %7
+    \item No one can fool himself or herself.
 
-\item $\lnot p \implies \lnot q$
+    %8
+    \item There is someone who can fool exactly one person besides himself or herself.
 
-\item $ p \iff q$
-
-\item $ \lnot q \lor (\lnot p \wedge q))$
 
 \end{enumerate}
-\textit{Solution:} ...
+
 %---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 02 **********
 \clearpage
-\problem [10pts] Construct a truth table for the compound propositions $((p\implies q) \implies r))\implies s)$.\\
-\textit{Solution:} ...
+\problem [15pts] Use rules of inference to show that if
+    $\forall x (P(x) \lor Q(x)),$
+    $\forall x (\neg Q(x) \lor S(x)),$
+    $\forall x (R(x) \implies \neg S(x)) and$
+    $\forall x \neg P(x)$
+    are true, then
+    $\exists x \neg R(x)$
+    is true. \\
+
+
+\bigbreak
+\textit{Solution:} 
 %---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ********** PROBLEM 03 **********
 \clearpage
-\problem [5pts] Show that the statement $(p \vee q) \wedge [\lnot p \wedge \lnot q]$ is a contradiction.\\
-\textit{Solution:} ...
+\problem [10pts] Let $L(x, y)$ be the statement $x$ loves $y$, where the domain for both
+$x$ and $y$ consists of all people in the world. Translate the following predicate logic into English.\\
+\bigbreak
+\textit{Solution:} 
+\begin{enumerate}
+    %1
+    \item $\forall x L(x, Jerry)$
+
+    %2
+    \item $\forall x \exists y L(x, y)$
+
+    %3
+    \item $\exists y \forall x L(x, y)$
+        
+    %4
+    \item $\exists x \neg L(Lydia, x)$
+
+    %5
+    \item $\exists x \forall y \neg L(y, x)$
+
+    %6
+    \item $\exists x (\forall y L(y, x) \land \forall z (\forall w L(w, z)) \implies z = x)$
+
+\end{enumerate}
 %---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ********** PROBLEM 04 **********
 \clearpage
-\problem [10pts] On the island of Flopi, there are three types of people: Knights, Knaves, and Floppers. All inhabitants know which type the others are, but they are otherwise indistinguishable. Knights always tell the truth. Knaves always lie. Floppers always choose to lie or tell the truth by doing the opposite of the previous speaker (i.e. if someone just spoke a lie, the flopper will tell the truth; if someone just spoke a truth, the flopper will lie). While on your vacation, you come across three inhabitants, $A$, $B$, and $C$. They say the following, in order:
-\begin{quote}
-	$A$ says, ``We are all knights.''\\
-	$B$ says, ``$C$ is a knight.''\\
-	$C$ says, ``$A$ is a knave.''\\
-	$A$ says, ``$C$ lied.''
-\end{quote}
-Determine all possibilities of $A$, $B$, and $C$ being Knights, Knaves, or Floppers (not all need to be distinct).\\
-\textit{Solution:} ...
+\problem [10pts] For each of these arguments determine whether the argument is correct or incorrect and explain why.
+
+\bigbreak
+\textit{Solution:} 
+
+\begin{enumerate}
+    %1
+    \item Everyone enrolled in the university has lived in a dormitory.
+        Mia has never lived in a dormitory.
+        Therefore, Mia is not enrolled in the university.
+
+    %2
+    \item A convertible car is fun to drive.
+        Isaacss car is not a convertible.
+        Therefore, Isaacs car is not fun to drive.
+
+    %3
+    \item Quincy likess all action movies.
+        Quincy likes the movie Eight Men Out.
+        Therefore, Eight Men Out is an action movie.
+
+    %4
+    \item All lobstermen set at least a dozen traps.
+        Hamilton is a lobsterman.
+        Therefore, Hamilton sets at least a dozen traps.
+
+\end{enumerate}
+
 %------------------------------------------------------------------------------------------------------------------------------------------------
-\clearpage
-\problem [10pts] Five friends have access to a chat room. Is it possible to determine who is chatting if the following information is known? Either Kevin
-or Heather, or both, are chatting. Either Randy or Vijay, but not both, are chatting. If Abby is chatting, so is Randy. Vijay and Kevin are either both chatting or neither is. If Heather is chatting, then so are Abby and Kevin.\\
-\textit{Solution:} ...
-%----------------------------------------------------------------------------------------------------------------------------------------------------------------
-\clearpage
-\problem [10pts] Show that $(p\implies q) \implies [(q\implies r)\implies(p \implies r)]$ is a tautology (using a truth table).
 
-%----------------------------------------------------------------------------------------------------------------------------------------------------------------
-\clearpage
-\problem [10pts] Prove\footnote{"Prove" means do not use truth tables!} that $(p \implies q) \wedge (p \implies r)$ and $p \implies (q \wedge r)$ are logically equivalent.\\
-\textit{Solution:} ...
-%----------------------------------------------------------------------------------------------------------------------------------------------------------------
-\clearpage
-\problem [15pts] Prove\footnote{``Prove'' means do not use truth tables!} that $\neg [[[[(p\wedge q) \wedge r]\vee[(p\wedge r)\wedge\neg r]]\vee \neg q]\rightarrow s]$ and $[(p\wedge r)\vee \neg q] \wedge \neg s$ are logically equivalent. Then check it by using a truth table.\\
-\textit{Solution:} ...
-%----------------------------------------------------------------------------------------------------------------------------------------------------------------
-\clearpage
-\problem[Bonus] Some extra exercises in Sections 1.1, 1.2, 1.3 from Rosen's book, 7th ed.
 
-\textit{Solution:} ...
 
-\end{document} 
+% ********** PROBLEM 05 **********
+\clearpage
+\problem [10pts] Express each of these mathematical statements using predicates,
+    quantifiers, logical connectives, and mathematical operators, where the domain
+    consists of all integers.
+
+\bigbreak
+\textit{Solution:} 
+
+\begin{enumerate}
+    %1
+    \item The product of two negative integers is positive.
+
+    %2
+    \item The average of two positive integers is positive.
+
+    %3
+    \item The absolute value of the sum of two integers does not exceed the sum of the
+        absolute values of the integers.
+\end{enumerate}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 06 **********
+\clearpage
+\problem [15pts] Express each of these mathematical statements using quantifiers.
+    Then form the negation of the statement so that no negation is to the left of a quantifier.
+    Next, express the negation in simple English.
+
+\bigbreak
+\textit{Solution:}
+
+    \begin{enumerate}
+        %1
+        \item All dogs have fleas. \\
+            \textit{Example: } We write this statement as
+                $\forall x (D(x) \implies F(x))$
+                or
+                $\forall x (\neg D(x) \land F(x)).$
+                Its negation is
+                $\exists x (D(x) \lor \neg F(x)),$
+                and in English it translates into "There is a dog that does not have fleas".
+
+        %2
+        \item There is a horse that can add.
+
+        %3
+        \item Every koala can climb.
+
+        %4
+        \item No monkey can speak French.
+
+        %5
+        \item There exists a pig that can swim and catch fish.
+    \end{enumerate}
+
+\bigbreak
+\textit{Solution:}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 07 **********
+\clearpage
+\problem [10pts] Use rules of inference to prove that \\
+    \begin{align}
+        \neg t \lor u \\
+        r \implies (s \lor t) \\
+        (\neg p \lor q) \implies r \\
+        \neg (s \lor u) \\
+        \cline{1-2}
+        \therefore q
+    \end{align}
+
+\bigbreak
+\textit{Solution:}
+
+
+% ********** PROBLEM 08 **********
+\clearpage
+\problem [15pts] Use rules of inference to prove that \\
+    \begin{align}
+        \forall x \in \R (P(x) \lor Q(x)) \\
+        \forall x \in \R (\neg P(x) \land Q(x) \implies T(x)) \\
+        \cline{1-2}
+        \therefore \forall x \in \R (\neg T(x) \implies P(x))
+    \end{align}
+
+\bigbreak
+\textit{Solution:}
+
+
+
+% ********** PROBLEM 09 **********
+\clearpage
+\problem [Bonus] Solve as much as you can the exercises in Section 1.4, 1.5, 1.6 in Rosen's
+book, 7th ed. The following are recommended:
+    \par Section 1.4: 9, 10, 12, 13, 18, 23, 44
+    \par Section 1.5: 8, 10, 18, 28, 33, 36, 49
+    \par Section 1.6: 3, 9, 16, 19, 22, 24, 34
+
+\bigbreak
+\textit{Solution:}
+
+\end{document}
