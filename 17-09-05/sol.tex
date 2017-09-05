@@ -279,8 +279,38 @@ $x$ and $y$ consists of all people in the world. Translate the following predica
     \end{align}
 
 \bigbreak
-\textit{Solution:}
+\textit{Solution:} \\
+    \bigbreak
+    Denote:
+    \begin{itemize}
+        \item $\forall x \in \R P(x) \equiv p$
+        \item $\forall x \in \R Q(x) \equiv q$
+        \item $\forall x \in \R T(x) \equiv t$
+        \item $A \equiv p \lor q$
+        \item $B \equiv (\lnot p \land q) \implies t$
+        \item $C \equiv \lnot t \implies p$
+    \end{itemize}
 
+    We have to prove: $A \land B \implies C$
+
+    $B \equiv (\lnot p \land q) \implies t$ \\
+    $\equiv \lnot(\lnot p \land q) \lor t$ 
+    \hfill (Logical equivalence involving conditional statements) \\
+    $\equiv (p \lor \lnot q) \lor t$
+    \hfill (De Morgan's laws) \\
+    $\equiv \lnot q \lor (p \lor t)$
+    \hfill (Associative laws) \\
+    \break
+
+    $A \land B \equiv (p \lor q) \land [\lnot q \lor (p \lor t)]$ \\
+    $\equiv (q \lor p) \land [\lnot q \lor (p \lor t)]$ \\
+    $\equiv p \lor (p \lor t)$ 
+    \hfill (Resolution rule of inference) \\
+    $\equiv p \lor t$
+    \hfill (Idempotent laws) \\
+    $\equiv \lnot t \implies p$
+    \hfill (Logical equivalence involving conditional statements) \\
+    $\equiv C$ (Q.E.D)
 
 
 % ********** PROBLEM 09 **********
