@@ -1,0 +1,191 @@
+\documentclass[10pt]{article}
+
+\usepackage{pictex, latexsym, graphicx,amsmath,amssymb,amsbsy,amsfonts,amsthm,verbatim}
+\usepackage{graphics}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{algorithm,algorithmic}
+\usepackage{multirow}
+
+\setlength{\voffset}{-0.25in}
+\setlength{\headsep}{0.25in}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+% Counter for the problems.
+\newcounter{problem}
+\newcommand{\problem}{\textbf{\refstepcounter{problem}Problem \theproblem.} }
+
+% Macros
+\def\vu{\mathbf{u}}
+\def\vx{\mathbf{x}}
+\def\vb{\mathbf{b}}
+\def\vv{\mathbf{v}}
+\def\vw{\mathbf{w}}
+
+\renewcommand{\implies}{\rightarrow}
+\renewcommand{\lor}{\vee}
+\renewcommand{\land}{\wedge}
+\newcommand{\xor}{\oplus}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\TRUE}{\mathbf{T}}
+\newcommand{\FALSE}{\mathbf{F}}
+\newcommand{\universe}{\mathcal{U}}
+\newcommand\R{\mathbb{R}}
+
+
+% Math commands:
+% \forall, \exists
+
+\begin{document}
+\pagestyle{fancyplain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chead{DISCRETE STRUCTURE (CO1007) --- SOLUTION to Homework 02 --- PREDICATE LOGIC \& PROOF}
+\textit{\textbf{\underline{Instruction:}} Type your answers to the following questions provided by LaTeX and submit a zipped file (included .pdf and .tex files) to E-learning by group (only 4-5 members in each group). Only team leader will submit it. One page per problem. Please use the solution template provided.}
+
+% ********** GROUP INFO **********
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline 
+        \multicolumn{4}{|c|}{\textbf{GROUP ... ---- MEMBER LIST}} \\ 
+        \hline 
+        \textbf{No.} &\qquad\qquad \textbf{Name}\qquad\qquad\qquad & \qquad\textbf{ID}\qquad\qquad & \qquad\textbf{Role}\qquad\qquad \\ 
+        \hline 
+        1 &  &  &  \\ 
+        \hline 
+        2 &  &  &  \\ 
+        \hline 
+        3 &  &  &  \\ 
+        \hline 
+        4 &  &  &  \\ 
+        \hline 
+        5 &  &  &  \\ 
+        \hline 
+    \end{tabular} 
+\end{center}
+
+
+
+% ********** PROBLEM 01 **********
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 02 **********
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ********** PROBLEM 03 **********
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ********** PROBLEM 04 **********
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+% ********** PROBLEM 05 **********
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 06 **********
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 07 **********
+\clearpage
+\problem [10pts] Prove the triangle inequality, which states that if $x$ and $y$ are real numbers,
+then $|x| + |y| \geq |x + y|$ (where $|x|$ represents the absolute value of $x$, which equals $x$ if
+$x \geq 0$ and equals $-x$ if $x < 0$).
+
+\bigbreak
+\textit{Solution:}
+    \par We have the inequality: $\forall a \in \R, a \leq |a|$. \\
+    Similarly:
+
+    \begin{itemize}
+        \item \textbf{Case 1}: $|x + y| \geq 0$
+        $\Rightarrow |x + y| = x + y \leq x + |y| \leq |x| + |y|$
+        \item \textbf{Case 2}: $|x + y| < 0$
+        $\Rightarrow |x + y| = - (x + y) = -x - y \leq |-x| - y = |x| - y \leq |x| + |-y| = |x| + |y|$
+   \end{itemize}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 08 **********
+\clearpage
+\problem [15pts] Prove or disprove that if you have an 8-gallon jug of water and two empty jugs with
+capacities of 5 gallons and 3 gallons, respectively, then you can measure 4 gallons by successively
+pouring some of or all of the water into a jug into another jug.
+
+\bigbreak
+\textit{Solution:} \\
+    4 gallons can be measured by doing the following steps:
+ \begin{center}
+     \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        From & To & Quantity & 8-gallon jug & 5-gallon jug & 3-gallon jug \\ 
+        \hline
+                     &              &   & 8 & 0 & 0 \\
+        \hline
+        8-gallon jug & 5-gallon jug & 5 & 3 & 5 & 0 \\
+        \hline
+        5-gallon jug & 3-gallon jug & 3 & 3 & 2 & 3 \\
+        \hline 
+        3-gallon jug & 8-gallon jug & 3 & 6 & 2 & 0 \\
+        \hline 
+        5-gallon jug & 3-gallon jug & 2 & 6 & 0 & 2 \\
+        \hline 
+        8-gallon jug & 5-gallon jug & 5 & 1 & 5 & 2 \\
+        \hline 
+        5-gallon jug & 3-gallon jug & 1 & 1 & 4 & 3 \\
+        \hline 
+    \end{tabular} 
+\end{center}
+   
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+% ********** PROBLEM 09 **********
+\clearpage
+\problem [Bonus] Solve as much as you can the exercises in Section 1.4, 1.5, 1.6 in Rosen's
+book, 7th ed. The following are recommended:
+    \par Section 1.4: 9, 10, 12, 13, 18, 23, 44
+    \par Section 1.5: 8, 10, 18, 28, 33, 36, 49
+    \par Section 1.6: 3, 9, 16, 19, 22, 24, 34
+
+\clearpage
+\textbf{Section 1.6 - Problem 3} \\
+    \textbf{a.}  Alice is a mathematics major. Therefore, Alice is either a mathematics
+    major or a computer science major.\\
+        $\Rightarrow$ \textbf{Addition rule} \\
+
+    \textbf{b.} Jerry is a mathematics major and a computer science major. Therefore,
+    Jerry is a mathematics major.
+        $\Rightarrow$ \textbf{Simplification rule} \\
+
+    \textbf{c.} If it is rainy, then the pool will be closed. It is rainy.
+    Therefore, the pool is closed. \\
+        $\Rightarrow$ \textbf{Modus ponens} \\
+
+
+    \textbf{d.} If it snows today, the university will close. The university is not
+    closed today. Therefore, it did not snow today. \\
+        $\Rightarrow$ \textbf{Modus tollens} \\
+
+    \textbf{e.} If I go swimming, then I will stay in the sun too long. If I stay in
+    the sun too long, then I will sunburn. Therefore, if I go swimming, then I will sunburn. \\
+        $\Rightarrow$ \textbf{Hypothetical syllogism} \\
+
+\end{document}
