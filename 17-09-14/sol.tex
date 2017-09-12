@@ -92,12 +92,44 @@
 
 
 % ********** PROBLEM 05 **********
+\clearpage
+\problem [5pts] Prove that there is no positive integer $n$ such that $n^{2} + n^{3} = 100$.
+
+\bigbreak
+\textit{Solution:}
+    \par Suppose there exists an integer $n$ such that $n^{2} + n^{3} = 100$.
+    $\Rightarrow n^{2}(n + 1) = 100$ \\
+    $\Rightarrow 100 \vdots n^{2}$ \\
+    The set of all factors of 100 is {1, 2, 5, 10, 20, 25, 100}. \\
+    $n^{2}$ is a perfect square number \\
+    $\Rightarrow n^{2} \in \{1; 25; 100\}.$ \\
+    $\Rightarrow n \in \{1; 5; 10\}.$ \\
+    $\Rightarrow n^{2}(n + 1) \in \{2; 150; 1100\}.$ \\
+    The set does not contain the value 100.
+    Conclusion: By contradition, the proposition is proved.
 
 %------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 % ********** PROBLEM 06 **********
+\clearpage
+\problem [5pts] Show that if $a$, $b$, and $c$ are real numbers and $a \neq 0$, then there is a
+unique solution of the equation $ax + b = c$.
 
+\bigbreak
+\textit{Solution:}
+\begin{itemize}
+    \item Suppose there is no solution for the equation $ax + b = c$. \\
+        $\Rightarrow x = \dfrac{c - b}{a}$ is not a real number (conflicting the definition of
+        rational numbers)\\
+    \item Suppose there is more than one unique solution for the equation $ax + b = c$.
+    \par Denote $x_{1}$ and $x_{2}$, ($x_{1} \neq x_{2}$) as two distinct roots of the equation.
+        $\Rightarrow ax_{1} + b = ax_{2} + b = 0$ \\
+        $\Rightarrow ax_{1} = ax_{2}$ \\
+        $\Rightarrow \dfrac{ax_{1}}{a} = \dfrac{ax_{2}}{a}$ \\
+        $\Rightarrow x_{1} = x_{2}$ (contradicting the assumption) \\
+\end{itemize}
+    Conclusion: By contradition, the proposition is proved.
 
 %------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -131,6 +163,8 @@ pouring some of or all of the water into a jug into another jug.
 
 \bigbreak
 \textit{Solution:} \\
+\bigbreak
+
     4 gallons can be measured by doing the following steps:
  \begin{center}
      \begin{tabular}{|c|c|c|c|c|c|}
@@ -159,33 +193,47 @@ pouring some of or all of the water into a jug into another jug.
 
 % ********** PROBLEM 09 **********
 \clearpage
-\problem [Bonus] Solve as much as you can the exercises in Section 1.4, 1.5, 1.6 in Rosen's
+\problem [Bonus] Solve as much as you can the exercises in Section 1.7, 1.8 in Rosen's
 book, 7th ed. The following are recommended:
-    \par Section 1.4: 9, 10, 12, 13, 18, 23, 44
-    \par Section 1.5: 8, 10, 18, 28, 33, 36, 49
-    \par Section 1.6: 3, 9, 16, 19, 22, 24, 34
+    \par Section 1.7: 1, 5, 17, 24, 26, 35
+    \par Section 1.8: 13, 17, 20, 22, 30
 
+
+% ********* EXTRA 1.7 - 1 ********
 \clearpage
-\textbf{Section 1.6 - Problem 3} \\
-    \textbf{a.}  Alice is a mathematics major. Therefore, Alice is either a mathematics
-    major or a computer science major.\\
-        $\Rightarrow$ \textbf{Addition rule} \\
-
-    \textbf{b.} Jerry is a mathematics major and a computer science major. Therefore,
-    Jerry is a mathematics major.
-        $\Rightarrow$ \textbf{Simplification rule} \\
-
-    \textbf{c.} If it is rainy, then the pool will be closed. It is rainy.
-    Therefore, the pool is closed. \\
-        $\Rightarrow$ \textbf{Modus ponens} \\
+\textbf{Section 1.7 - Problem 1} Use a direct proof to show that the sum of two odd integers is even.
+\bigbreak
+\textit{Solution} \\
+\bigbreak
+    Suppose the two odd integers are $a = 2m + 1$ and $b = 2n + 1$. ($m, n \in \textbf{N}$) \\
+    Then: \\
+    $a + b = 2m + 2n + 2 = 2(m + n + 1)$
+    $\Rightarrow$ The sum of the two odd integers is even.
 
 
-    \textbf{d.} If it snows today, the university will close. The university is not
-    closed today. Therefore, it did not snow today. \\
-        $\Rightarrow$ \textbf{Modus tollens} \\
+% ********* EXTRA 1.7 - 5 ********
+\clearpage
+\textbf{Section 1.7 - Problem 5} Prove that if $m + n$ and $n + p$ are even integers, where $m$, $n$
+and $p$ are integers, then $m + p$ is even. What kind of proof did you use?
+\bigbreak
+\textit{Solution} \\
+    Suppose:
+    \begin{equation}
+        \begin{cases}
+            m + n = 2a \\
+            n + p = 2b
+        \end{cases}
+    \end{equation}
+    in which $a, b \in \mathbb{N}$. \\
+    Then:
+    \begin{equation}
+        m + n + n + p = m + p + 2n = 2(a + b)
+        \Rightarrow m + p + 2n \vdots 2
+        \Rightarrow m + p \vdots 2
+    \end{equation}
+    Conclusion: The proposition is proved using direct proof.
 
-    \textbf{e.} If I go swimming, then I will stay in the sun too long. If I stay in
-    the sun too long, then I will sunburn. Therefore, if I go swimming, then I will sunburn. \\
-        $\Rightarrow$ \textbf{Hypothetical syllogism} \\
+\bigbreak
+
 
 \end{document}
