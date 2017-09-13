@@ -318,7 +318,7 @@ $x$ and an irrational number $y$ such that $x^{y}$ is irrational.
     Suppose $2^{\sqrt{2}}$ is rational. \\
     Let $x_{2} = 2^{\sqrt{2}}$ and $y_{2} = \sqrt{2}$ \\
 
-% ********* EXTRA 1.7 - 17 ********
+% ********* EXTRA 1.8 - 17 ********
 \clearpage
 \textbf{Section 1.8 - Problem 17} Suppose that $a$ and $b$ are odd integers with
 $a \neq b$. Show there is a unique integer $c$ such that $|a - c| = |b - c|$.
@@ -333,5 +333,29 @@ $a \neq b$. Show there is a unique integer $c$ such that $|a - c| = |b - c|$.
             $\Rightarrow c = \dfrac{a + b}{2}$
     \end{itemize}
     Since $a$ and $b$ are odd integers, $a + b$ is even. Therefore, $c$ is a unique integer.
+
+% ********* EXTRA 1.8 - 20 ********
+\clearpage
+\textbf{Section 1.8 - Problem 20} Prove that given a real number $x$ there exist unique numbers
+$n$ and $\epsilon$ such that $x = n - \epsilon$, $n$ is an integer, and $0 \leq \epsilon < 1$.
+\bigbreak
+\textit{Solution}: \\
+    Let $n = \lfloor x \rfloor$. According to the definition of the floor function:
+    $n$ is unique and $0 \leq x - n < 1$ \\
+    Let $\epsilon = x - n \Rightarrow \epsilon$ is also unique since $x$ is a fixed value and
+    $n$ is unique.
+
+% ******** EXTRA 1.8 - 22 ********
+\clearpage
+\textbf{Section 1.8 - Problem 22} Use forward reasoning to show that if $x$ is a nonzero real
+number, then $x^{2} + \dfrac{1}{x^{2}} \geq 2$.
+\bigbreak
+\textit{Solution}:
+    \begin{equation} \begin{aligned}
+        x^2 + \dfrac{1}{x^{2}}
+        & =  x^2 - 2x \dfrac{1}{x} + \dfrac{1}{x^{2}} + 2x \dfrac{1}{x} \\
+        & =  (x - \dfrac{1}{x})^{2} + 2 \\
+        & \geq 2
+    \end{aligned} \end{equation}
 
 \end{document}
