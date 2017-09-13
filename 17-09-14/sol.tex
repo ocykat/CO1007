@@ -216,7 +216,7 @@ book, 7th ed. The following are recommended:
 \textbf{Section 1.7 - Problem 5} Prove that if $m + n$ and $n + p$ are even integers, where $m$, $n$
 and $p$ are integers, then $m + p$ is even. What kind of proof did you use?
 \bigbreak
-\textit{Solution} \\
+\textit{Solution}: \\
     Suppose:
     \begin{equation}
         \begin{cases}
@@ -234,6 +234,75 @@ and $p$ are integers, then $m + p$ is even. What kind of proof did you use?
     Conclusion: The proposition is proved using direct proof.
 
 \bigbreak
+
+% ********* EXTRA 1.7 - 24 ********
+\clearpage
+\textbf{Section 1.7 - Problem 24} Show that at least three of any 25 days chosen must
+fall in the same month of the year.
+\bigbreak
+\textit{Solution}: \\
+
+    \par Assume that in the 25 chosen days, there is no combination of any three days
+    that are in the same month.
+    \par As a result, there are at most 2 different days for each month, meaning that
+    there are at most 24 different days for twelve months. Thus, there must be a
+    month having at least 3 different days in the chosen days. This contradicts the
+    assumption.
+    \par Conclusion: By contradiction, the proposition is proved.
+
+% ********* EXTRA 1.7 - 26 ********
+\clearpage
+\textbf{Section 1.7 - Problem 26} Prove that if $n$ is a positive integer, then $n$
+is even if and only if $7n + 4$ is even.
+\bigbreak
+\textit{Solution}: \\
+
+    Denote: \\
+    $p \equiv n \mbox{ is even}$. \\
+    $q \equiv 7n + 4 \mbox{ is even}$. \\
+    \begin{itemize}
+        \item Prove: $p \implies q$ \\
+            $n$ is even \\
+            $\Rightarrow 7n$ is even \\
+            $\Rightarrow 7n + 4$ is even \\
+            Conclusion: The proposition is proved using direct proof.
+        \item Prove: $q \implies p$ \\
+            Suppose $n$ is not even. \\
+            $\Rightarrow 7n$ is not even \\
+            $\Rightarrow 7n + 4$ is not even \\
+            Conclusion: The proposition is proved using contraposition.
+        \item
+        \begin{equation}
+            \mbox{Since }
+            \begin{cases}
+                p \implies q \\
+                q \implies p 
+            \end{cases}
+            \Rightarrow p \iff q
+        \end{equation}
+    \end{itemize}
+
+% ********* EXTRA 1.7 - 35 ********
+\clearpage
+\textbf{Section 1.7 - Problem 35} Are these steps for finding the solutions of
+the equation $\sqrt{2x^2 - 1} = x$ correct?
+\begin{enumerate}
+    \item $\sqrt{2x^2 - 1} = x$ is given
+    \item $2x^2 - 1 = x$, obtained by squaring both sides of (1)
+    \item $x^2 - 1 = 0$, obtained by subtracting $x^2$ from both sides of (2)
+    \item $(x - 1)(x + 1) = 0$, obtained by factoring the left-hand side of
+        $x^2 - 1$
+    \item $x = 1$ or $x = -1$ which follows because $ab = 0$ implies that $a = 0$
+        or $b = 0$.
+\end{enumerate}
+
+\bigbreak
+\textit{Solution}: \\
+    The solution is incorrect. \\
+    The domains of $x$ in equations (1) and (2) are different: \\
+    $D_{1} = (-\infty; -\dfrac{\sqrt{2}}{2}] \cup [\dfrac{\sqrt{2}}{2}; +\infty)$ \\
+    $D_{2} = \mathbb{R}$ \\
+    therefore (1) and (2) are not tautology and the solution is incorrect. \\
 
 
 \end{document}
