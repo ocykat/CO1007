@@ -1,0 +1,267 @@
+\documentclass[10pt]{article}
+
+\usepackage{pictex, latexsym, graphicx,amsmath,amssymb,amsbsy,amsfonts,amsthm,verbatim}
+\usepackage{graphics}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{algorithm,algorithmic}
+\usepackage{multirow}
+
+\setlength{\headheight}{12pt}
+\setlength{\voffset}{-0.25in}
+\setlength{\headsep}{0.25in}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+% Counter for the problems.
+\newcounter{problem}
+\newcommand{\problem}{\textbf{\refstepcounter{problem}Problem \theproblem.} }
+
+% Macros
+\def\vu{\mathbf{u}}
+\def\vx{\mathbf{x}}
+\def\vb{\mathbf{b}}
+\def\vv{\mathbf{v}}
+\def\vw{\mathbf{w}}
+
+\renewcommand{\implies}{\rightarrow}
+\renewcommand{\lor}{\vee}
+\renewcommand{\land}{\wedge}
+\newcommand{\xor}{\oplus}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\TRUE}{\mathbf{T}}
+\newcommand{\FALSE}{\mathbf{F}}
+\newcommand{\universe}{\mathcal{U}}
+\newcommand\R{\mathbb{R}}
+
+
+% Math commands:
+% \forall, \exists
+
+\begin{document}
+\pagestyle{fancyplain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chead{DISCRETE STRUCTURE (CO1007) --- SOLUTION to Homework 02 --- PREDICATE LOGIC \& PROOF}
+\textit{\textbf{\underline{Instruction:}} Type your answers to the following questions provided by LaTeX and submit a zipped file (included .pdf and .tex files) to E-learning by group (only 4-5 members in each group). Only team leader will submit it. One page per problem. Please use the solution template provided.}
+
+% ********** GROUP INFO **********
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline 
+        \multicolumn{4}{|c|}{\textbf{GROUP ... ---- MEMBER LIST}} \\ 
+        \hline 
+        \textbf{No.} &\qquad\qquad \textbf{Name}\qquad\qquad\qquad & \qquad\textbf{ID}\qquad\qquad & \qquad\textbf{Role}\qquad\qquad \\ 
+        \hline 
+        1 &  &  &  \\ 
+        \hline 
+        2 &  &  &  \\ 
+        \hline 
+        3 &  &  &  \\ 
+        \hline 
+        4 &  &  &  \\ 
+        \hline 
+        5 &  &  &  \\ 
+        \hline 
+    \end{tabular} 
+\end{center}
+
+% ************** PROBLEM 15 *******************
+\clearpage
+\problem [5pts] Find the solution to each of these recurrence relations with the given initial
+conditions (Hint: Use an iterative approach).
+\begin{enumerate}
+    \item $a_{n} = a_{n - 1}, a_{0} = 5$
+    \item $a_{n} = a_{n - 1} - n, a_{0} = 4$
+    \item $a_{n} = 2a_{n - 1} - 3, a_{0} = - 1$
+    \item $a_{n} = (n + 1)a_{n - 1}, a_{0} = 2$
+    \item $a_{n} = - a_{n - 1} + n - 1, a_{0} = 7$
+\end{enumerate}
+
+\bigbreak
+\textit{Solution}
+\bigbreak 
+\begin{enumerate}
+    \item $a_{n} = a_{n - 1}, a_{0} = 5$
+        \begin{itemize}
+            \item $a_{0} = 5$
+            \item $a_{1} = a_{0} = 5$
+            \item $a_{2} = a_{1} = 5$
+            \item \ldots
+        \end{itemize}
+        $\Rightarrow a_{n} = 5$
+
+    \item $a_{n} = a_{n - 1} - n, a_{0} = 4$
+        \begin{align*}
+            a_{0} &=& 4  \\
+            a_{1} &=& a_{0} - 1 &=& 4 - 1 &=& 3 &=& 4 - 1 \\
+            a_{2} &=& a_{1} - 2 &=& 3 - 2 &=& 1 &=& 4 - 1 - 2 \\
+            a_{3} &=& a_{2} - 3 &=& 1 - 3 &=& -2 &=& 4 - 1 - 2 - 3 \\
+            a_{4} &=& a_{3} - 4 &=& -2 - 4 &=& -6 &=& 4 - 1 - 2 - 3 - 4 \\
+        \end{align*}
+        $\Rightarrow a_{n} = 4 - \dfrac{n(n + 1)}{2}$
+
+    \item $a_{n} = 2a_{n - 1} - 3, a_{0} = - 1$
+        \begin{align*}
+            a_{0} &=& -1 \\
+            a_{1} &=& 2a_{0} - 3 &=& 2(-1) - 3 &=& -5 &=& -1 - 4 &=& -1 - 4 \\
+            a_{2} &=& 2a_{1} - 3 &=& 2(-5) - 3 &=& -13 &=& -1 - 4 - 8 &=& -1 - 4 - 4.2 \\
+            a_{3} &=& 2a_{2} - 3 &=& 2(-13) - 3 &=& -29 &=& -1 - 4 - 8 - 16 &=&
+                -1 - 4 - 4.2 - 4.2^{2} \\
+            a_{4} &=& 2a_{3} - 3 &=& 2(-29) - 3 &=& -61 &=& -1 - 4 - 8 - 16 - 32 &=&
+                -1 - 4 - 4.2 - 4.2^{2} - 4.2^{3} \\
+        \end{align*}
+        $\Rightarrow a_{n} = -1 - \sum_{i = 1}^{n} 4^{i} = -1 - \dfrac{4(\,2^{n + 1} - 1)\,}{2 - 1}$
+            $ = -1 - 4(\,2^{n + 1} - 1)\,$
+
+    \item $a_{n} = (n + 1)a_{n - 1}, a_{0} = 2$
+        \begin{align*}
+            a_{0} && && && &=& 2.1 \\
+            a_{1} &=& (1 + 1).a_{0} &=& 2.2 &=& 4 &=& 2.1.2 \\
+            a_{2} &=& (2 + 1).a_{1} &=& 3.4 &=& 12 &=& 2.1.2.3 \\
+            a_{3} &=& (3 + 1).a_{2} &=& 4.12 &=& 48 &=& 2.1.2.3.4 \\
+        \end{align*}
+        $\Rightarrow a_{n} = 2.(n + 1)!$
+
+    \item $a_{n} = - a_{n - 1} + n - 1, a_{0} = 7$
+        \begin{align*}
+            a_{0} &=& 7 && &=& 7.(-1)^{0} + \lfloor \dfrac{0}{2} \rfloor \\
+            a_{1} &=& -7 + 1 - 1 &=& -7 &=& 7.(-1)^{1} + \lfloor \dfrac{1}{2} \rfloor \\
+            a_{2} &=& 7 + 2 - 1  &=& 8  &=& 7.(-1)^{2} + \lfloor \dfrac{2}{2} \rfloor \\
+            a_{3} &=& -8 + 3 - 1 &=& -6 &=& 7.(-1)^{3} + \lfloor \dfrac{3}{2} \rfloor \\
+            a_{4} &=& 6 + 4 - 1  &=& 9  &=& 7.(-1)^{4} + \lfloor \dfrac{4}{2} \rfloor \\
+        \end{align*}
+        $\Rightarrow a_{n} = 7.(-1)^{n} + \lfloor \dfrac{n}{2} \rfloor$
+
+\end{enumerate}
+
+% ********* EXTRA 2.1 - 9 ********
+\clearpage
+\textbf{Section 2.1 - Problem 9} Determine wheter each of these statements is true or false.
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+    \par a. $0 \in \emptyset$: False
+    \par b. $\emptyset \in \{0\}$: False
+    \par c. $\{0\} \subset \emptyset$: False
+    \par d. $\emptyset \subset \{0\}$: True
+    \par e. $\{0\} \in \{0\}$: False
+    \par f. $\{0\} \subset \{0\}$: True
+    \par g. $\{\emptyset\} \subseteq \{\emptyset\}$: True
+
+% ********* EXTRA 2.1 - 10 ********
+\clearpage
+\textbf{Section 2.1 - Problem 10} Determine wheter these statements are true or false.
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+    \par a. $\emptyset \in \{\emptyset\}$: True
+    \par b. $\emptyset \in \{\emptyset, \{\emptyset\}\}$: True
+    \par c. $\{\emptyset\} \in \{\emptyset\}$: False
+    \par d. $\{\emptyset\} \in \{\{\emptyset\}\}$: True
+    \par e. $\{\emptyset\} \subset \{\emptyset, \{\emptyset\}\}$: True
+    \par f. $\{\{\emptyset\}\} \subset \{\emptyset, \{\emptyset\}\}$: True
+    \par g. $\{\{\emptyset\}\} \subset \{\{\emptyset\}, \{\emptyset\}\}$: True
+
+% ********* EXTRA 2.1 - 22 ********
+\clearpage
+\textbf{Section 2.1 - Problem 22} Can you conclude that $A = B$ if $A$ and $B$ are two sets
+with the same power set?
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+    Suppose $A$ and $B$ are two sets with different power sets. \\
+    $\Rightarrow (\exists x \in A, x \not \in B) \lor (\exists x \in B, x \not \in A)$ \\
+    $\Rightarrow A \neq B$ \\
+    Conclusion: The proposition is proved by contraposition.
+
+% ********* EXTRA 2.1 - 26 ********
+\clearpage
+\textbf{Section 2.1 - Problem 26} Show that if $A \subseteq C$ and $B \subseteq D$, then
+$A \times B \subseteq C \times D$.
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+    $P \land \lnot Q \equiv \mathbf{T}$. \\
+    Let $P \equiv A \subseteq C \land B \subseteq D$ \\
+    Let $Q \equiv A \times B \subseteq C \times D$ \\
+    Suppose $\lnot Q$ \\
+    $\Rightarrow A \times B \not \subseteq C \times D $ \\
+    $\Rightarrow \exists (x, y) \in A \times B: (x, y) \not \in C \times D$ \\
+    $\Rightarrow \exists x, y: (x \in A \land x \not \in C) \lor (y \in B \land y \not \in D)$ \\
+    $\Rightarrow (A \not \in C) \lor (B \not \in D)$ \\
+    $\Rightarrow \lnot P$ \\
+
+    Conclusion: The proposition is proved by contraposition.
+
+% ********* EXTRA 2.1 - 29 ********
+\clearpage
+\textbf{Section 2.1 - Problem 29} What is the Cartesian product $A \times B \times C$ where $A$
+is the set of all airlines and $B$ and $C$ are both the set of all cities in the United States?
+Give an example of how this Cartesian product can be used.
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+    The product is the set in which every element is a flight supported by a specific airline
+    from a specific city to another city. \\
+    Example of how this Carteisan product can be used: It can help a customer to choose a good
+    airline for his trip from his current city to a certain destination.
+
+% ********* EXTRA 2.1 - 40 ********
+\clearpage
+\textbf{Section 2.1 - Problem 40} Explain why $(A \times B) \times (C \times D)$ and
+$A \times (B \times C) \times D$ are not the same.
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+    $(A \times B) \times (C \times D)$ \\
+    $= \{(a, b) | a \in A, b \in B\} \times \{(c, d) | c \in C, d \in D\} $ \\
+    $= \{((a, b), (c, d)) | a \in A, b \in B, c \in C, d \in D\}$ \\
+    \break
+    $A \times (B \times C) \times D$ \\
+    $= A \times \{(b, c) | b \in B, c \in C\} \times D$ \\
+    $= \{(a, (b, c), d) | a \in A, b \in B, c \in C, d \in D\}$ \\
+    \break
+    Conclusion: $(A \times B) \times (C \times D)$ and $A \times (B \times C) \times D$
+    are not the same.
+
+
+% ********* EXTRA 2.2 - 2 ********
+\clearpage
+\textbf{Section 2.2 - Problem 2} Suppose that $A$ is the set of sophomores at your school
+and $B$ is the set of students in discrete mathematics at your school. Express each of these
+sets in terms of $A$ and $B$.
+
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+    \par a) The set of sophomores taking discrete mathematics in your school: $A \cap B$
+    \par b) The set of sophomores at your school who are not taking discrete mathematics:
+    $A \cap \overline{B}$
+    \par c) The set of students at your school who either are sophomores or are taking
+    discrete mathematics: $A \cup B$
+    \par d) The set of students at your school who either are not sophomores or are not
+    taking discrete mathematics: $\overline{A} \cup \overline{B} \equiv \overline{A \cap B}$
+
+% ******** EXTRA 2.2 - 30 ******** (INCOMPLETE)
+\clearpage
+\textbf{Section 2.2 - Problem 30} Can you conclude that $A = B$ if $A$, $B$ and $C$ are sets
+such that:
+\par a) $A \cup C = B \cup C$
+\par b) $A \cap C = B \cap C$
+\par c) $A \cup C = B \cup C and A \cap C = B \cap C$
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+
+
+\end{document}
