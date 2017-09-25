@@ -187,14 +187,13 @@ $A \times B \subseteq C \times D$.
 \textit{Solution} 
 \bigbreak
 
-    $P \land \lnot Q \equiv \mathbf{T}$. \\
     Let $P \equiv A \subseteq C \land B \subseteq D$ \\
     Let $Q \equiv A \times B \subseteq C \times D$ \\
     Suppose $\lnot Q$ \\
     $\Rightarrow A \times B \not \subseteq C \times D $ \\
     $\Rightarrow \exists (x, y) \in A \times B: (x, y) \not \in C \times D$ \\
     $\Rightarrow \exists x, y: (x \in A \land x \not \in C) \lor (y \in B \land y \not \in D)$ \\
-    $\Rightarrow (A \not \in C) \lor (B \not \in D)$ \\
+    $\Rightarrow (A \not \subset C) \lor (B \not \subset D)$ \\
     $\Rightarrow \lnot P$ \\
 
     Conclusion: The proposition is proved by contraposition.
@@ -243,25 +242,143 @@ sets in terms of $A$ and $B$.
 \textit{Solution} 
 \bigbreak
 
-    \par a) The set of sophomores taking discrete mathematics in your school: $A \cap B$
-    \par b) The set of sophomores at your school who are not taking discrete mathematics:
+    \par (a) The set of sophomores taking discrete mathematics in your school: $A \cap B$
+    \par (b) The set of sophomores at your school who are not taking discrete mathematics:
     $A \cap \overline{B}$
-    \par c) The set of students at your school who either are sophomores or are taking
+    \par (c) The set of students at your school who either are sophomores or are taking
     discrete mathematics: $A \cup B$
-    \par d) The set of students at your school who either are not sophomores or are not
+    \par (d) The set of students at your school who either are not sophomores or are not
     taking discrete mathematics: $\overline{A} \cup \overline{B} \equiv \overline{A \cap B}$
 
-% ******** EXTRA 2.2 - 30 ******** (INCOMPLETE)
+% ******** EXTRA 2.2 - 30 ******** 
 \clearpage
 \textbf{Section 2.2 - Problem 30} Can you conclude that $A = B$ if $A$, $B$ and $C$ are sets
 such that:
-\par a) $A \cup C = B \cup C$
-\par b) $A \cap C = B \cap C$
-\par c) $A \cup C = B \cup C and A \cap C = B \cap C$
+\par (a) $A \cup C = B \cup C$
+\par (b) $A \cap C = B \cap C$
+\par (c) $A \cup C = B \cup C \mbox{ and } A \cap C = B \cap C$
 \bigbreak
 \textit{Solution} 
 \bigbreak
 
+    \par \textbf{(a)} $A \cup C = B \cup C \implies A = B$ ? \\
+        Suppose $A = \emptyset$, $B = {1}$, $C = {1}$. \\
+        We have: $A \cup C = B \cup C = {1}$. However, $A \neq B$. \\
+        Conclusion: The proposition is proved wrong using counterexample.
+
+    \par \textbf{(b)} $A \cap C = B \cap C \implies A = B$ ? \\
+        Suppose $A = {1, 2}$, $B = {1, 2, 3}$, $C = {1}$. \\
+        We have: $A \cup C = B \cup C = {1}$. However, $A \neq B$. \\
+        Conclusion: The proposition is proved wrong using counterexample.
+
+    \par \textbf{(c)} $(A \cup C = B \cup C) \land (A \cap C = B \cap C) \implies A = B$ ? \\
+        Let
+        \begin{equation}
+            \begin{cases}
+            P \equiv (A \cup C = B \cup C) \land (A \cap C = B \cap C) \\ 
+            Q \equiv (A \cup C = B \cup C) \land (A \cap C = B \cap C) \\ 
+            \end{cases}
+        \end{equation}
+        Suppose $\lnot Q \equiv A \neq B$ \\
+        $\Rightarrow \exists x, (x \in A \land x \not \in B) \lor (x \not \in A \land x \in B)$ \\
+        $\Rightarrow \exists x, (x \in A \xor x \in B)$ \\
+        We also have: $x \in C \lor x \not \in C$ \\
+        \textbf{Case 1}: $x \not \in C$ \\
+        $\Rightarrow \exists x, (x \in A \xor x \in B) \land (x \not \in C)$ \\
+        $\Rightarrow A \cap C \neq B \cap C$ \\
+        $\Rightarrow \lnot P$ \\
+        Conclusion: The proposition is proved correct by contraposition.
+
+% ******** EXTRA 2.2 - 41 ******** 
+\clearpage
+\textbf{Section 2.2 - Problem 41}
+Suppose that A, B, and C are sets such that $A \xor C$ = $B \xor C$. Must it
+be the case that $A = B$?
+\bigbreak
+\textit{Solution} 
+\bigbreak
+    Based on the problem \textbf{2.2 - 30 - (c)}: \\
+    $(A \cup C = B \cup C) \land (A \cap C = B \cap C) \implies A = B$ \\
+    $\Rightarrow (A \xor C = B \xor C) \implies A = B$
+
+% ******** EXTRA 2.2 - 46 ******** 
+\clearpage
+\textbf{Section 2.2 - Problem 46}
+Show that if $A$, $B$ and $C$ are sets, then
+\begin{equation}
+    |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C|
+    + |A \cap B \cap C|
+\end{equation}
+\bigbreak
+\textit{Solution} 
+\bigbreak
+    First, we try to prove the lemma: $|A \cup B| = |A| + |B| - |A \cap B|$ \\
+    The cardinality of a set is the number of distinct element in that set.
+    The sum $|A| + |B|$ has already taken in the number of overlapping elements in
+    $A \cap B$ twice. Therefore, we have to subtract $|A \cap B|$.
+    \break
+
+    Back to the given proposition. Let $D = B \cup C$.
+    \begin{align*}
+        LHS & = |A \cup B \cup C| \\
+        & = |A \cup D| \\
+        & = |A| + |D| - |A \cap D| \\
+        & = |A| + |B \cup C| - |A \cap (B \cup C)| \\
+        & = |A| + |B \cup C| - |(A \cap B) \cup (A \cap C)| \\
+        & = |A| + |B| + |C| - |B \cup C| - |A \cap B| - |A \cap C| + |A \cap B \cap C| \\
+        & = RHS
+    \end{align*}
+    Conclusion: the proposition is proved.
+
+
+% ******** EXTRA 2.2 - 61 ******** 
+\clearpage
+\textbf{Section 2.2 - Problem 61}
+Let $A$ and $B$ be the multisets $\{3 \cdot a, 2 \cdot b, 1 \cdot c\}$ and
+$\{2 \cdot a, 3 \cdot b, 4 \cdot d\}$, respectively. Find:
+\par \textit{a.} $A \cup B$
+\par \textit{b.} $A \cap B$
+\par \textit{c.} $A - B$
+\par \textit{d.} $B - A$
+\par \textit{e.} $A + B$
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+\par \textit{a.} $A \cup B = \{3 \cdot a, 3 \cdot b, 1 \cdot c, 4 \cdot d\}$
+\par \textit{b.} $A \cap B = \{2 \cdot a, 2 \cdot b\}$
+\par \textit{c.} $A - B = \{1 \cdot a, 1 \cdot c\}$
+\par \textit{d.} $B - A = \{1 \cdot b, 4 \cdot c\}$
+\par \textit{e.} $A + B = \{5 \cdot a, 5 \cdot b, 1 \cdot b, 4 \cdot c\}$
+
+% ******** EXTRA 2.2 - 62 ******** 
+\clearpage
+\textbf{Section 2.2 - Problem 62}
+Suppose that A is the multiset that has as its elements the types of computer
+equipment needed by one department of a university and the multiplicities are
+the number of pieces of each type needed, and B is the analogous multiset for
+a second department of the university. For instance, A could be the multiset
+{107 $\cdot$ personal computers, 44 $\cdot$ routers, 6 $\cdot$ servers} and B could be
+the multiset {14 $\cdot$ personal computers, 6 $\cdot$ routers, 2 $\cdot$ mainframes}.
+
+\par \textit{a.} What combination of A and B represents the equipment the university
+should buy assuming both departments use the same equipment?
+\par \textit{b.} What combination of A and B represents the equipment that will be
+used by both departments if both departments use the same equipment?
+\par \textit{c.} What combination of A and B represents the equipment that the second
+department uses, but the first department does not, if both departments use the same
+equipment?
+\par \textit{d.} What combination of A and B represents the equipment that the
+university should purchase if the departments do not share equipment?
+
+\bigbreak
+\textit{Solution} 
+\bigbreak
+
+\par \textit{a.} $A \cup B$
+\par \textit{b.} $A \cap B$
+\par \textit{c.} $B - A$
+\par \textit{d.} $A \cap B$
 
 
 \end{document}
