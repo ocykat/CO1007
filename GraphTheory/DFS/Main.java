@@ -1,12 +1,9 @@
 import java.util.Scanner;
-import java.io.BufferedOutputStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Main {
     private static Scanner in = new Scanner(System.in);
-    private static PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out));
 
     public static void main(String[] args) {
         // Create a graph with given number of vertices
