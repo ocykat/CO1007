@@ -90,7 +90,7 @@ class Graph {
                 }
             }
 
-            // Visit its adjacent vertices and relax
+            // "Relax" the adjacent vertices
             isVisited[u] = true;
             for (int j = 0; j < adjList[u].size(); j++) {
                 int v = adjList[u].get(j);
